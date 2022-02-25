@@ -1,0 +1,20 @@
+VNC
+Configuração: muito complexa, difícil de configurar para conexão com outro usuário.
+Utilização: não há muitas dicas de utilização do aplicativo. O aplicativo precisa ser instalado nas duas máquinas.
+Interface: interface simples, mas, ao mesmo tempo, complexa. Não é fácil de saber todas as funcionalidades exatamente.
+Custo: Gratuito.
+Conclusão: 4/10.
+
+AnyDesk
+Configuração: muito fácil, o próprio aplicativo faz as configurações para você, é necessário apenas escolher o que o usuário vai ser capaz de fazer e aceitar a conexão.
+Utilização: muito fácil, apenas instalar e encontrar a máquina que quer se conectar. O aplicativo precisa ser instalado nas duas máquinas.
+Interface: interface bem elaborada e interativa que ajuda muito os usuários.
+Custo: Gratuito.
+Conclusão: 10/10.
+
+Getscreen.me
+Configuração: o app faz tudo para você, é necessário apenas copiar a url para o computador que precisa ser conectado. 
+Utilização: a utilização é consideravelmente fácil, sem muita enrolação. O aplicativo precisa ser instalado nas duas máquinas.
+Interface: interface simples e interativa, o usuário entende exatamente como e onde as coisas devem ser.
+Custo: Gratuito.
+Conclusão: 6/10.
