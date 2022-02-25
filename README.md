@@ -19,8 +19,8 @@
 * As habilidades do Linux são necessárias para muitas faixas profissionais de TI. Por exemplo, o conhecimento de comandos básicos do Linux é um pré-requisito para programas de certificação de TI
 
 ### Comandos
-<p>Os comandos são sensitive case, ou seja, há distinção entre letras maiúsculas e minúsculas.<p>
-O comando ``` ls ```  exibe uma lista de informações sobre arquivos.
+* Os comandos são sensitive case, ou seja, há distinção entre letras maiúsculas e minúsculas.
+* O comando ``` ls ```  exibe uma lista de informações sobre arquivos.
 A maioria dos comandos segue um padrão simples de sintaxe:
-'comando [opcoes…] [argumentos…]
-Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou argumentos antes de pressionar a tecla Enter. Normalmente, as opções alteram o comportamento do comando e os argumentos são itens ou valores para o comando agir.
+``` comando [opcoes…] [argumentos…] ```
+<p>Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou argumentos antes de pressionar a tecla Enter. Normalmente, as opções alteram o comportamento do comando e os argumentos são itens ou valores para o comando agir.<p>
