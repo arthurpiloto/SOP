@@ -22,5 +22,5 @@
 * Os comandos são sensitive case, ou seja, há distinção entre letras maiúsculas e minúsculas
 * o comando ``` ls ```  exibe uma lista de informações sobre arquivos
 * A maioria dos comandos segue um padrão simples de sintaxe:
-    comando [opcoes…] [argumentos…]
+    ``` comando [opcoes…] [argumentos…] ```
     Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou argumentos antes de pressionar a tecla Enter. Normalmente, as opções alteram o comportamento do comando e os argumentos são itens ou valores para o comando agir.
