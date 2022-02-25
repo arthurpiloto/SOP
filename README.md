@@ -23,4 +23,4 @@
 * O comando ``` ls ```  exibe uma lista de informações sobre arquivos.
 A maioria dos comandos segue um padrão simples de sintaxe:
 ``` comando [opcoes…] [argumentos…] ```
-<p>Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou argumentos antes de pressionar a tecla Enter. Normalmente, as opções alteram o comportamento do comando e os argumentos são itens ou valores para o comando agir.<p>
+    <p>Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou argumentos antes de pressionar a tecla Enter. Normalmente, as opções alteram o comportamento do comando e os argumentos são itens ou valores para o comando agir.<p>
