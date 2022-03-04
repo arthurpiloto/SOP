@@ -28,3 +28,11 @@ A maioria dos comandos segue um padrão simples de sintaxe:
 ``` comando [opcoes…] [argumentos…] ```
 
 Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou argumentos antes de pressionar a tecla Enter. Normalmente, as opções alteram o comportamento do comando e os argumentos são itens ou valores para o comando agir.
+
+#### Argumentos
+Um argumento pode ser usado para especificar algo para o comando agir. O comando ``` ls ``` pode ser dado o nome de um diretório como um argumento, e ele irá listar o conteúdo desse diretório.
+
+Como o Linux é de código aberto, existem alguns segredos interessantes que foram adicionados pelos desenvolvedores, pesquise-os para saber mais!
+
+#### Opções
+As opções podem ser usadas para alterar o comportamento de um comando. O comando ``` ls ``` foi usado para listar o conteúdo de um diretório e a opção ``` -1 ``` resulta em uma saída de "exibição longa", ou seja, fornece mais irformações sobre cada 
