@@ -108,3 +108,8 @@ Vamos usar as informações de um arquivo exemplo para mostrar as informações 
 Existem três permissões diferentes que podem ser colocadas em um arquivo ou diretório: ler, gravar e executar. A maneira pela qual essas permissões se aplicam difere para arquivos e diretórios.
 
 <img alt="Tabela de tipos de permissões" src="./img-README/tabel-permissoes.png">
+
+#### Alterando Permissões
+O comando ``` chmod ``` é usado para alterar as permissões de um arquivo ou diretório. Somente o usuário administrador (root) ou o usuário que possui o arquivo é capaz de alterar as permissões de um arquivo. Existem duas técnicas para alterar as permissões: Simbólico e Octal. O método simbólico é bom para alterar um conjunto de permissões de cada vez. O método octal ou numérico requer o conhecimento do valor octal de cada uma das permissões e requer que todos os três conjuntos de permissões (usuário, grupo, outros) sejam especificados a cada vez.
+
+* Por uma questão de simplicidade, apenas o método simbólico será coberto.
