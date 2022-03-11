@@ -31,9 +31,6 @@ Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou 
 
 O comando ``` pwd ``` pode ser usado para mostras sua localização atual dentro de um sistema de arquivos.
 
-Use o comando ``` cd ``` para alterar diretórios.
-    cd [opções] [caminho]
-
 ### Argumentos
 Um argumento pode ser usado para especificar algo para o comando agir. O comando ``` ls ``` pode ser dado o nome de um diretório como um argumento, e ele irá listar o conteúdo desse diretório.
 
@@ -45,3 +42,25 @@ As opções podem ser usadas para alterar o comportamento de um comando. O coman
 Muitas vezes, o caractere é escolhido para ser mnemônico para o seu propósito, como escolher a letra "l" para longo ou "r" para reverso. Por padrão o comando ``` ls ``` imprime os resultados em ordem alfabética, se adicionarmos a opção ``` -r ``` irá imprimir os resultados em ordem alfabética inversa.
 
 As opções podem ser usadas de uma só vez, por exemplo ``` ls -l -r ``` ou ``` ls -rl ``` ou ``` ls -lr ```. Todas as opções vão gerar o mesmo resultado.
+
+### Diretórios
+Os diretórios são um tipo de arquivo usado para armazenar outros arquivos, eles fornecem uma estrutura organizacional hierárquica. 
+
+Use o comando ``` cd ``` para navegar e alterar entre diretórios.
+
+``` cd [opcoes…] [argumentos…] ```
+
+Os diretórios são equivalentes a pastas no Windows e Mac OS. Assim como esses sistemas operacionais mais populares, uma estrutura de diretórios Linux tem um nível superior. Não é chamado de “Meu Computador”, mas sim o diretório root (raiz) e é representado pelo caractere "/". Para mover para o diretório root, use o caractere "/" como argumento para o comando ``` cd ```.
+
+O argumento para o comando ``` cd ``` é mais do que apenas o nome de um diretório, na verdade é um caminho. Um caminho é uma lista de diretórios separados pelo caractere "/".
+
+----------------------------------------------------------------------------------------------------------------
+Se você pensar no sistema de arquivos como um mapa, os caminhos são as direções passo a passo; eles podem ser usados para indicar a localização de qualquer arquivo dentro do sistema de arquivos. Existem dois tipos de caminhos: absoluto e relativo. Os caminhos absolutos começam na root do sistema de arquivos, os caminhos relativos começam a partir da sua localização atual.
+
+* Caminho absoluto: Um caminho absoluto permite que você especifique a localização exata de um diretório.
+* Caminho relativo: um caminho relativo fornece direções para um arquivo relativo à sua localização atual no sistema de arquivos. Os caminhos relativos não começam com o caractere "/", eles começam com o nome de um diretório.
+
+### Atalhos
+* Os caracteres "..": Independentemente do diretório em que você esteja, os caracteres ".." sempre representa um diretório maior em relação ao diretório atual, às vezes referido como o diretório pai. Mais resumidamente, os caracteres ".." são usados para voltar um diretório.
+* O caractere ".": Independentemente do diretório em que você esteja, o caractere . sempre representa seu diretório atual. Para o ``` cd ``` este atalho não é muito útil, mas será útil para comandos cobertos nas seções subsequentes.
+* O caractere "~": Usado para retornar ao seu diretório home a qualquer momento, execute o seguinte comando: ``` cd ~ ```.
