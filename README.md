@@ -71,7 +71,7 @@ Se você pensar no sistema de arquivos como um mapa, os caminhos são as direç�
 ### Acesso Administrativo
 Existem muitos comandos Linux que lidam com informações confidenciais, como senhas, hardware do sistema, ou de outra forma operam sob outras circunstâncias excepcionais. Impedir que usuários regulares executem esses comandos ajuda a proteger o sistema. Fazer login como usuário root fornece acesso administrativo, permitindo a execução de alguns dos comandos privilegiados.
 
-* O comando ``` su ```
+#### O comando ``` su ```
 
 ``` su [opções] [nome-do-usuário] ```
 
@@ -79,7 +79,7 @@ O comando ``` su ``` permite que você atue temporariamente como um usuário adm
 
 Depois de executar o comando, uma senha é necessária. Você consegue mudar ou definir a senha de algum usuário escrevendo o comando ``` password [nome-do-usuário] ```.
 
-* O comando ``` sudo ```
+#### O comando ``` sudo ```
 
 ``` sudo [opções] [comando] ```
 
