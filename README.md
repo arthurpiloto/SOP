@@ -73,5 +73,16 @@ Existem muitos comandos Linux que lidam com informações confidenciais, como se
 
 * O comando ``` su ```
 
-``` su OPÇÕES NOME_DE_USUÁRIO ```
+``` su [opções] [nome-do-usuário] ```
 
+O comando ``` su ``` permite que você atue temporariamente como um usuário administrador. Ele faz isso criando um novo console de entrada de texto que permite digitar comandos, chamado shell. Para sair e retornar à conta, use o comando ``` exit ```.
+
+Depois de executar o comando, uma senha é necessária. Você consegue mudar ou definir a senha de algum usuário escrevendo o comando ``` password [nome-do-usuário] ```.
+
+* O comando ``` sudo ```
+
+``` sudo [opções] [comando] ```
+
+O comando ``` sudo ``` permite que você execute um comando como usuário administrador sem criar um novo shell. O comando ``` sudo ``` também pode ser usado para alternar para outras contas de usuário. Para especificar uma conta de usuário diferente, use a opção ``` -u ```.
+
+Assim como o comando ``` su ```, o ``` sudo ``` também pede senha para entrar no usuário.
