@@ -46,7 +46,9 @@ Muitas vezes, o caractere é escolhido para ser mnemônico para o seu propósito
 As opções podem ser usadas de uma só vez, por exemplo ``` ls -l -r ``` ou ``` ls -rl ``` ou ``` ls -lr ```. Todas as opções vão gerar o mesmo resultado.
 
 ### Diretórios
-Os diretórios são um tipo de arquivo usado para armazenar outros arquivos, eles fornecem uma estrutura organizacional hierárquica. 
+Os diretórios são um tipo de arquivo usado para armazenar outros arquivos, eles fornecem uma estrutura organizacional hierárquica.
+
+<img alt="Hierarquia de pastas e arquivos" src="./img-README/diretorios.png">
 
 Use o comando ``` cd ``` para navegar e alterar entre diretórios.
 
