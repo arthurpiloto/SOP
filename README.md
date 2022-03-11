@@ -63,7 +63,15 @@ Se você pensar no sistema de arquivos como um mapa, os caminhos são as direç�
 * Caminho relativo: um caminho relativo fornece direções para um arquivo relativo à sua localização atual no sistema de arquivos. Os caminhos relativos não começam com o caractere "/", eles começam com o nome de um diretório.
 ----------------------------------------------------------------------------------------------------------------
 
-### Atalhos
+#### Atalhos
 * Os caracteres "..": Independentemente do diretório em que você esteja, os caracteres ".." sempre representa um diretório maior em relação ao diretório atual, às vezes referido como o diretório pai. Mais resumidamente, os caracteres ".." são usados para voltar um diretório.
 * O caractere ".": Independentemente do diretório em que você esteja, o caractere . sempre representa seu diretório atual. Para o ``` cd ``` este atalho não é muito útil, mas será útil para comandos cobertos nas seções subsequentes.
 * O caractere "~": Usado para retornar ao seu diretório home a qualquer momento, execute o seguinte comando: ``` cd ~ ```.
+
+### Acesso Administrativo
+Existem muitos comandos Linux que lidam com informações confidenciais, como senhas, hardware do sistema, ou de outra forma operam sob outras circunstâncias excepcionais. Impedir que usuários regulares executem esses comandos ajuda a proteger o sistema. Fazer login como usuário root fornece acesso administrativo, permitindo a execução de alguns dos comandos privilegiados.
+
+* O comando ``` su ```
+
+``` su OPÇÕES NOME_DE_USUÁRIO ```
+
