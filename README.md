@@ -81,6 +81,8 @@ O comando ``` su ``` permite que você atue temporariamente como um usuário adm
 
 Depois de executar o comando, uma senha é necessária. Você consegue mudar ou definir a senha de algum usuário escrevendo o comando ``` password [nome-do-usuário] ```.
 
+<img alt="Painel de controle" src="./img-README/painel-su.png">
+
 #### O comando ``` sudo ```
 
 ``` sudo [opções] [comando] ```
@@ -88,6 +90,10 @@ Depois de executar o comando, uma senha é necessária. Você consegue mudar ou 
 O comando ``` sudo ``` permite que você execute um comando como usuário administrador sem criar um novo shell. O comando ``` sudo ``` também pode ser usado para alternar para outras contas de usuário. Para especificar uma conta de usuário diferente, use a opção ``` -u ```.
 
 Assim como o comando ``` su ```, o ``` sudo ``` também pede senha para entrar no usuário.
+
+Execute o comando ``` sl ``` como usuário root colocando ``` sudo ``` na frente dele.
+
+<img alt="Painel de controle" src="./img-README/painel-sudo.png">
 
 ### Permissões 
 As permissões determinam as maneiras pelas quais diferentes usuários podem interagir com um arquivo ou diretório.
