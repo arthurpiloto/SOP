@@ -94,4 +94,9 @@ Vamos usar as informações de um arquivo exemplo para mostrar as informações 
 
     -rw-r--r-- 1 sysadmin sysadmin 647 Dec 20  2017 hello.sh
 
-<img alt="Campos relevantes para permissões" src="./permissoes.png">
+<img alt="Campos relevantes para permissões" src="./img-README/permissoes.png">
+
+#### Tipos de permissão
+Existem três permissões diferentes que podem ser colocadas em um arquivo ou diretório: ler, gravar e executar. A maneira pela qual essas permissões se aplicam difere para arquivos e diretórios.
+
+<img alt="Tabela de tipos de permissões" src="./img-README/tabel-permissoes.png">
