@@ -93,3 +93,5 @@ As permissões determinam as maneiras pelas quais diferentes usuários podem int
 Vamos usar as informações de um arquivo exemplo para mostrar as informações necessárias:
 
     -rw-r--r-- 1 sysadmin sysadmin 647 Dec 20  2017 hello.sh
+
+<img alt="Campos relevantes para permissões" src="./permissoes.png">
