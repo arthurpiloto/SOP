@@ -61,9 +61,9 @@ Se você pensar no sistema de arquivos como um mapa, os caminhos são as direç�
 
 * Caminho absoluto: Um caminho absoluto permite que você especifique a localização exata de um diretório.
 * Caminho relativo: um caminho relativo fornece direções para um arquivo relativo à sua localização atual no sistema de arquivos. Os caminhos relativos não começam com o caractere "/", eles começam com o nome de um diretório.
+----------------------------------------------------------------------------------------------------------------
 
 ### Atalhos
 * Os caracteres "..": Independentemente do diretório em que você esteja, os caracteres ".." sempre representa um diretório maior em relação ao diretório atual, às vezes referido como o diretório pai. Mais resumidamente, os caracteres ".." são usados para voltar um diretório.
 * O caractere ".": Independentemente do diretório em que você esteja, o caractere . sempre representa seu diretório atual. Para o ``` cd ``` este atalho não é muito útil, mas será útil para comandos cobertos nas seções subsequentes.
 * O caractere "~": Usado para retornar ao seu diretório home a qualquer momento, execute o seguinte comando: ``` cd ~ ```.
-----------------------------------------------------------------------------------------------------------------
