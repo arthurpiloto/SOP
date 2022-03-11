@@ -86,3 +86,10 @@ Depois de executar o comando, uma senha é necessária. Você consegue mudar ou 
 O comando ``` sudo ``` permite que você execute um comando como usuário administrador sem criar um novo shell. O comando ``` sudo ``` também pode ser usado para alternar para outras contas de usuário. Para especificar uma conta de usuário diferente, use a opção ``` -u ```.
 
 Assim como o comando ``` su ```, o ``` sudo ``` também pede senha para entrar no usuário.
+
+### Permissões 
+As permissões determinam as maneiras pelas quais diferentes usuários podem interagir com um arquivo ou diretório.
+
+Vamos usar as informações de um arquivo exemplo para mostrar as informações necessárias:
+
+    -rw-r--r-- 1 sysadmin sysadmin 647 Dec 20  2017 hello.sh
