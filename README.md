@@ -15,6 +15,20 @@
 * start ==> abre programas desejados
 * tree ==> mostra toda a "árvore" da pasta
 
+### Comandos que exigem permissão de Administrador
+* net user ==> usado para gerenciar e ver os usuários do computador
+* net user (nome do usuário) /add ==> cria um usuário
+* net user (nome do usuário) (senha) /add ==> cria uma senha para o usuário
+* net user (nome do usuário) /fullname:"" ==> coloque o nome completo do usuário selecionado
+
+Você é capaz de juntar todos os comandos em um só:
+    
+    net user pedro Senai@127 /add /fullname:"Pedro da Silva"
+
+* net user (nome do usuário) "*" ==> trocar a senha de usuário
+* net localgroup administradores (nome do usuário) /add ==> adicionar um usuário como Administrador
+* net localgroup administradores (nome do usuário) /delete ==> deleta um usuário como Administrador
+
 ## Linux (curso na Cisco)
 * As habilidades do Linux são necessárias para muitas faixas profissionais de TI. Por exemplo, o conhecimento de comandos básicos do Linux é um pré-requisito para programas de certificação de TI
 
@@ -58,12 +72,12 @@ Os diretórios são equivalentes a pastas no Windows e Mac OS. Assim como esses 
 
 O argumento para o comando ``` cd ``` é mais do que apenas o nome de um diretório, na verdade é um caminho. Um caminho é uma lista de diretórios separados pelo caractere "/".
 
-----------------------------------------------------------------------------------------------------------------
+---
 Se você pensar no sistema de arquivos como um mapa, os caminhos são as direções passo a passo; eles podem ser usados para indicar a localização de qualquer arquivo dentro do sistema de arquivos. Existem dois tipos de caminhos: absoluto e relativo. Os caminhos absolutos começam na root do sistema de arquivos, os caminhos relativos começam a partir da sua localização atual.
 
 * Caminho absoluto: Um caminho absoluto permite que você especifique a localização exata de um diretório.
 * Caminho relativo: um caminho relativo fornece direções para um arquivo relativo à sua localização atual no sistema de arquivos. Os caminhos relativos não começam com o caractere "/", eles começam com o nome de um diretório.
-----------------------------------------------------------------------------------------------------------------
+---
 
 #### Atalhos
 * Os caracteres "..": Independentemente do diretório em que você esteja, os caracteres ".." sempre representa um diretório maior em relação ao diretório atual, às vezes referido como o diretório pai. Mais resumidamente, os caracteres ".." são usados para voltar um diretório.
@@ -112,4 +126,10 @@ Existem três permissões diferentes que podem ser colocadas em um arquivo ou di
 #### Alterando Permissões
 O comando ``` chmod ``` é usado para alterar as permissões de um arquivo ou diretório. Somente o usuário administrador (root) ou o usuário que possui o arquivo é capaz de alterar as permissões de um arquivo. Existem duas técnicas para alterar as permissões: Simbólico e Octal. O método simbólico é bom para alterar um conjunto de permissões de cada vez. O método octal ou numérico requer o conhecimento do valor octal de cada uma das permissões e requer que todos os três conjuntos de permissões (usuário, grupo, outros) sejam especificados a cada vez.
 
-* Por uma questão de simplicidade, apenas o método simbólico será coberto.
+Por uma questão de simplicidade, apenas o método simbólico será coberto.
+    
+    chmod [<conjunto><ação><permissões>]... arquivo
+    
+Para usar o método simbólico de ``` chmod ``` você deve, primeiro, indicar qual conjunto de permissões está sendo alterado.
+
+<img alt="Tabela com o conjunto de permissões" src="./img-README/conjunto-permi.png">
