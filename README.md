@@ -43,11 +43,11 @@ Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou 
 
 * O comando ``` pwd ``` pode ser usado para mostras sua localização atual dentro de um sistema de arquivos.
 * O comando ``` ls ``` é usado para listar o conteúdo de um diretório.
-* O comado ``` cd ``` é usado para navegar e alterar entre direórios
+* O comado ``` cd ``` é usado para navegar e alterar entre diretórios.
 * O comando ``` su ``` permite que você atue temporariamente como um usuário administrador.
 * O comando ``` sudo ``` permite que você execute um comando como usuário administrador sem criar um novo shell.
 * O comando ``` chmod ``` é usado para alterar as permissões de um arquivo ou diretório.
-
+* O comando ``` chown ``` é usado para alterar a propriedade de arquivos e diretórios.
 
 ### Argumentos
 Um argumento pode ser usado para especificar algo para o comando agir. O comando ``` ls ``` pode ser dado o nome de um diretório como um argumento, e ele irá listar o conteúdo desse diretório.
@@ -148,4 +148,11 @@ Finalmente, um espaço e os nomes de caminho para os aquivos atribuírem essas p
 
     chmod u+x hello.sh
 
-### Alterando 
+### Alterando a Propriedade
+Inicialmente, o proprietário de um arquivo é o usuário que o cria. O comando ``` chown ``` é usado para alterar a propriedade de arquivos e diretórios. Alterar o proprietário do usuário requer acesso administrativo. Um usuário regular não pode usar esse comando para alterar o proprietário do usuário de um arquivo, mesmo para dar a propriedade de um de seus próprios arquivos a outro usuário. No entanto, o comando ``` chown ``` também permite alterar a propriedade do grupo, o que pode ser feito pela root ou o proprietário do arquivo.
+
+Para alterar o propietário do usuário de um arquivo use a seguinte sintaxe:
+
+    chown [opções] [proprietário] arquivo
+
+O primeiro argumento, "proprietário", especifica qual usuário deve ser o novo proprietário. O segundo argumento, "arquivo", especifica qual arquivo está mudando a propriedade.
