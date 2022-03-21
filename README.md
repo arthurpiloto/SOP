@@ -35,17 +35,19 @@ Você é capaz de juntar todos os comandos em um só:
 ### Comandos
 Os comandos são sensitive case, ou seja, há distinção entre letras maiúsculas e minúsculas.
 
-* O comando ``` ls ```  exibe uma lista de informações sobre arquivos.
-
 A maioria dos comandos segue um padrão simples de sintaxe:
 
 ``` comando [opcoes…] [argumentos…] ```
 
 Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou argumentos antes de pressionar a tecla Enter. Normalmente, as opções alteram o comportamento do comando e os argumentos são itens ou valores para o comando agir.
 
-O comando ``` pwd ``` pode ser usado para mostras sua localização atual dentro de um sistema de arquivos.
+* O comando ``` pwd ``` pode ser usado para mostras sua localização atual dentro de um sistema de arquivos.
+* O comando ``` ls ``` é usado para listar o conteúdo de um diretório.
+* O comado ``` cd ``` é usado para navegar e alterar entre direórios
+* O comando ``` su ``` permite que você atue temporariamente como um usuário administrador.
+* O comando ``` sudo ``` permite que você execute um comando como usuário administrador sem criar um novo shell.
+* O comando ``` chmod ``` é usado para alterar as permissões de um arquivo ou diretório.
 
-O comando ``` ls ``` é usado para listar o conteúdo de um diretório.
 
 ### Argumentos
 Um argumento pode ser usado para especificar algo para o comando agir. O comando ``` ls ``` pode ser dado o nome de um diretório como um argumento, e ele irá listar o conteúdo desse diretório.
@@ -87,7 +89,7 @@ Se você pensar no sistema de arquivos como um mapa, os caminhos são as direç�
 ### Acesso Administrativo
 Existem muitos comandos Linux que lidam com informações confidenciais, como senhas, hardware do sistema, ou de outra forma operam sob outras circunstâncias excepcionais. Impedir que usuários regulares executem esses comandos ajuda a proteger o sistema. Fazer login como usuário root fornece acesso administrativo, permitindo a execução de alguns dos comandos privilegiados.
 
-#### O comando ``` su ```
+### O comando ``` su ```
 
 ``` su [opções] [nome-do-usuário] ```
 
@@ -97,7 +99,7 @@ Depois de executar o comando, uma senha é necessária. Você consegue mudar ou 
 
 <img alt="Painel de controle" src="./img-README/painel-su.png">
 
-#### O comando ``` sudo ```
+### O comando ``` sudo ```
 
 ``` sudo [opções] [comando] ```
 
@@ -130,6 +132,20 @@ Por uma questão de simplicidade, apenas o método simbólico será coberto.
     
     chmod [<conjunto><ação><permissões>]... arquivo
     
-Para usar o método simbólico de ``` chmod ``` você deve, primeiro, indicar qual conjunto de permissões está sendo alterado.
+Para usar o método simbólico de ``` chmod ``` você deve, primeiro, indicar qual conjunto de permissões está sendo alterado:
 
 <img alt="Tabela com o conjunto de permissões" src="./img-README/conjunto-permi.png">
+
+Depois, especifique um símbolo de ação:
+
+<img alt="Tabela de símbolos de ação" src="./img-README/acao-permi.png">
+
+Após um símbolo de ação, especifique uma ou mais permissões a serem executadas:
+
+<img alt="Tabela com as permissões" src="./img-README/tabel-permi.png">
+
+Finalmente, um espaço e os nomes de caminho para os aquivos atribuírem essas permissões. Por exemplo:
+
+    chmod u+x hello.sh
+
+### Alterando 
