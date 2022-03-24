@@ -22,6 +22,8 @@ Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou 
 * O comando ` tail ` filtra as linhas de saída e visualização da parte inferior de um arquivo.
 * O comando ` cp ` é usado para copiar arquivos.
 * O comando ` dd ` é um utilitário para copiar arquivos ou partições inteiras no nível de bits.
+* O comando ` mv ` é usado para mover um arquivo de um local no sistema de arquivos para outro.
+* O comando ` rm ` é usado para excluir arquivos e diretórios.
 
 ## Argumentos
 Um argumento pode ser usado para especificar algo para o comando agir. O comando ` ls ` pode ser dado o nome de um diretório como um argumento, e ele irá listar o conteúdo desse diretório.
@@ -176,3 +178,25 @@ Este comando tem vários recursos úteis, inclusive:
 O comando ` dd ` usa argumentos especiais para especificar como ele funcionará. A seguir ilustra alguns dos argumentos mais comumente usados:
 
 <img alt="Lista dos argumentos mais usados" src="./img-notes/listDD.png">
+
+## Mover Arquivos
+O comando ` mv ` é usado para mover um arquivo de um local no sistema de arquivos para outro.
+
+    mv fonte destino
+
+O comando ` mv ` requer pelo menos dois argumentos. O primeiro argumento é a fonte, um caminho para o arquivo a ser movido. O segundo argumento é o destino, um caminho para onde o arquivo será movido. Os arquivos a serem movidos às vezes são chamados de origem, e o local onde os arquivos devem ser colocados é chamado de destino.
+
+Se um arquivo for movido de um diretório para outro sem especificar um novo nome para o arquivo, ele manterá seu nome original. Mover um arquivo dentro do mesmo diretório é uma maneira eficaz de renomeá-lo.
+
+O comando ` mv ` é capaz de mover vários arquivos, desde que o argumento final fornecido ao comando seja o destino.
+
+As permissões podem ter um impacto nos comandos de gerenciamento de arquivos, como o comando ` mv `. Mover um arquivo requer permissões de gravação e execução tanto nos diretórios de origem quanto nos de destino.
+
+## Removendo Arquivos
+O comando ` rm ` é usado para excluir arquivos e diretórios. É importante ter em mente que arquivos e diretórios excluídos não entram em uma "lixeira" como acontece com sistemas operacionais voltados para área de trabalho. Quando um arquivo é excluído com o comando ` rm `, ele quase sempre desaparece permanentemente.
+
+    rm [opções] arquivo
+
+Sem opções, o comando ` rm ` é normalmente usado para remover arquivos regulares. O comando ` rm ` ignorará os diretórios que é solicitado a remover; para excluir um diretório, use uma opção recursiva, seja as opções ` -r ` ou ` -R `. Basta ter cuidado, uma vez que estas opções são “recursivas”, isto irá eliminar todos os arquivos e todos os subdiretórios.
+
+As permissões podem ter um impacto nos comandos de gerenciamento de arquivos, como o comando ` rm `. Para excluir um arquivo dentro de um diretório, um usuário deve ter permissão de gravação e execução em um diretório. Normalmente, os usuários regulares só têm esse tipo de permissão em seu diretório (home) pessoal e seus subdiretórios.
