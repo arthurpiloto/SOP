@@ -1,4 +1,4 @@
-# Linux (curso na Cisco)
+# Linux 
 * As habilidades do Linux são necessárias para muitas faixas profissionais de TI. Por exemplo, o conhecimento de comandos básicos do Linux é um pré-requisito para programas de certificação de TI
 
 ## Comandos
@@ -20,6 +20,8 @@ Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou 
 * O comando ` cat ` exibirá todo o conteúdo de um arquivo.
 * O comando ` head ` filtra as linhas de saída e visualização da parte superior de um arquivo.
 * O comando ` tail ` filtra as linhas de saída e visualização da parte inferior de um arquivo.
+* O comando ` cp ` é usado para copiar arquivos.
+* O comando ` dd ` é um utilitário para copiar arquivos ou partições inteiras no nível de bits.
 
 ## Argumentos
 Um argumento pode ser usado para especificar algo para o comando agir. O comando ` ls ` pode ser dado o nome de um diretório como um argumento, e ele irá listar o conteúdo desse diretório.
@@ -36,7 +38,7 @@ As opções podem ser usadas de uma só vez, por exemplo ` ls -l -r ` ou ` ls -r
 ## Diretórios
 Os diretórios são um tipo de arquivo usado para armazenar outros arquivos, eles fornecem uma estrutura organizacional hierárquica.
 
-<img alt="Hierarquia de pastas e arquivos" src="./img-README/diretorios.png">
+<img alt="Hierarquia de pastas e arquivos" src="./img-notes/diretorios.png">
 
 Use o comando ` cd ` para navegar e alterar entre diretórios.
 
@@ -69,7 +71,7 @@ O comando ` su ` permite que você atue temporariamente como um usuário adminis
 
 Depois de executar o comando, uma senha é necessária. Você consegue mudar ou definir a senha de algum usuário escrevendo o comando ` password [nome-do-usuário] `.
 
-<img alt="Painel de controle" src="./img-README/painel-su.png">
+<img alt="Painel de controle" src="./img-notes/painel-su.png">
 
 ## O comando ` sudo `
 
@@ -81,7 +83,7 @@ Assim como o comando ` su `, o ` sudo ` também pede senha para entrar no usuár
 
 Execute o comando ` sl ` como usuário root colocando ` sudo ` na frente dele.
 
-<img alt="Painel de controle" src="./img-README/painel-sudo.png">
+<img alt="Painel de controle" src="./img-notes/painel-sudo.png">
 
 ## Permissões 
 As permissões determinam as maneiras pelas quais diferentes usuários podem interagir com um arquivo ou diretório.
@@ -90,12 +92,12 @@ Vamos usar as informações de um arquivo exemplo para mostrar as informações 
 
     -rw-r--r-- 1 sysadmin sysadmin 647 Dec 20  2017 hello.sh
 
-<img alt="Campos relevantes para permissões" src="./img-README/permissoes.png">
+<img alt="Campos relevantes para permissões" src="./img-notes/permissoes.png">
 
 ### Tipos de permissão
 Existem três permissões diferentes que podem ser colocadas em um arquivo ou diretório: ler, gravar e executar. A maneira pela qual essas permissões se aplicam difere para arquivos e diretórios.
 
-<img alt="Tabela de tipos de permissões" src="./img-README/tabel-permissoes.png">
+<img alt="Tabela de tipos de permissões" src="./img-notes/tabel-permissoes.png">
 
 ### Alterando Permissões
 O comando ` chmod ` é usado para alterar as permissões de um arquivo ou diretório. Somente o usuário administrador (root) ou o usuário que possui o arquivo é capaz de alterar as permissões de um arquivo. Existem duas técnicas para alterar as permissões: Simbólico e Octal. O método simbólico é bom para alterar um conjunto de permissões de cada vez. O método octal ou numérico requer o conhecimento do valor octal de cada uma das permissões e requer que todos os três conjuntos de permissões (usuário, grupo, outros) sejam especificados a cada vez.
@@ -106,15 +108,15 @@ Por uma questão de simplicidade, apenas o método simbólico será coberto.
     
 Para usar o método simbólico de ` chmod ` você deve, primeiro, indicar qual conjunto de permissões está sendo alterado:
 
-<img alt="Tabela com o conjunto de permissões" src="./img-README/conjunto-permi.png">
+<img alt="Tabela com o conjunto de permissões" src="./img-notes/conjunto-permi.png">
 
 Depois, especifique um símbolo de ação:
 
-<img alt="Tabela de símbolos de ação" src="./img-README/acao-permi.png">
+<img alt="Tabela de símbolos de ação" src="./img-notes/acao-permi.png">
 
 Após um símbolo de ação, especifique uma ou mais permissões a serem executadas:
 
-<img alt="Tabela com as permissões" src="./img-README/tabel-permi.png">
+<img alt="Tabela com as permissões" src="./img-notes/tabel-permi.png">
 
 Finalmente, um espaço e os nomes de caminho para os aquivos atribuírem essas permissões. Por exemplo:
 
@@ -148,3 +150,29 @@ Outra maneira de visualizar o conteúdo dos arquivos é usando os comandos ` hea
 A opção ` -n ` com os comandos ` head ` e ` tail ` pode ser usada para especificar a quantidade de linhas a serem exibidas. Para usar a opção ` -n `, especifique a quantidade de linhas do arquivo que deseja exibir após a opção e use o nome do arquivo como argumento.
 
     head -n [número de linhas] [nome do arquivo]
+
+## Copiando Arquivos
+O comando ` cp ` é usado para copiar arquivos. Ele requer pelo menos dois argumentos: uma origem e um destino.
+
+    cp [opções] fonte destino
+
+As permissões podem ter um impacto nos comandos de gerenciamento de arquivos, como o comando ` cp `. Para copiar um arquivo, é necessário ter permissão de execução para acessar o diretório onde o arquivo está localizado e a permissão de leitura para o arquivo que está sendo copiado. Também é necessário ter permissão de gravação e execução no diretório para o qual o arquivo está sendo copiado.
+
+Criar cópias de arquivos pode ser útil por vários motivos:
+* Se uma cópia de um arquivo for criada antes que as alterações sejam feitas, é possível voltar ao original.
+* Uma cópia de um arquivo pode ser usada para transferir um arquivo para dispositivos de mídia removíveis.
+* Uma cópia de um documento existente pode ser usada como modelo para um novo documento.
+---
+O comando ` dd ` é um utilitário para copiar arquivos ou partições inteiras no nível de bits.
+
+    dd [opções] operando
+
+Este comando tem vários recursos úteis, inclusive:
+* Pode ser usado para clonar ou excluir (limpar) discos ou partições inteiros.
+* Pode ser usado para copiar dados brutos para dispositivos removíveis, como unidades USB e CDROMs.
+* Pode fazer backup e restaurar o MBR (Master Boot Record).
+* Pode ser usado para criar um arquivo de tamanho específico preenchido com zeros binários, que pode ser usado como um arquivo de swap (memória virtual).
+
+O comando ` dd ` usa argumentos especiais para especificar como ele funcionará. A seguir ilustra alguns dos argumentos mais comumente usados:
+
+<img alt="Lista dos argumentos mais usados" src="./img-notes/listDD.png">
