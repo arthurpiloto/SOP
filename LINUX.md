@@ -18,6 +18,8 @@ Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou 
 * O comando ` chmod ` é usado para alterar as permissões de um arquivo ou diretório.
 * O comando ` chown ` é usado para alterar a propriedade de arquivos e diretórios.
 * O comando ` cat ` exibirá todo o conteúdo de um arquivo.
+* O comando ` head ` filtra as linhas de saída e visualização da parte superior de um arquivo.
+* O comando ` tail ` filtra as linhas de saída e visualização da parte inferior de um arquivo.
 
 ## Argumentos
 Um argumento pode ser usado para especificar algo para o comando agir. O comando ` ls ` pode ser dado o nome de um diretório como um argumento, e ele irá listar o conteúdo desse diretório.
@@ -130,3 +132,19 @@ O primeiro argumento, "proprietário", especifica qual usuário deve ser o novo 
 Não se esqueça de usar o comando ` sudo ` para obter os privilégios de administrador, se não você não conseguirá alterar a propriedade de um arquivo ou diretório.
 
 ## Exibindo Arquivos
+Existem alguns comandos Linux disponíveis para visualizar o conteúdo dos arquivos. O comando ` cat `, que significa "concatenate", é frequentemente usado para visualizar rapidamente o conteúdo de pequenos arquivos.
+
+O comando cat exibirá todo o conteúdo do arquivo, por isso é recomendado principalmente para arquivos menores onde a saída é limitada e não requer rolagem.
+
+    cat [opções] [arquivo]
+
+Ao visualizar arquivos maiores, o comando ` cat ` pode resultar em uma saída muito longa que não pode ser pausada para rolar. Um melhor método de visualização de arquivos de texto longos é com um comando de pager. Alguns exemplos são: ` more ` ou ` less `.
+
+Outra maneira de visualizar o conteúdo dos arquivos é usando os comandos ` head ` e ` tail `. Esses comandos são usados para exibir um número selecionado de linhas na parte superior ou inferior de um arquivo.
+
+    head [opções] [arquivo]
+    tail [opções] [arquivo]
+
+A opção ` -n ` com os comandos ` head ` e ` tail ` pode ser usada para especificar a quantidade de linhas a serem exibidas. Para usar a opção ` -n `, especifique a quantidade de linhas do arquivo que deseja exibir após a opção e use o nome do arquivo como argumento.
+
+    head -n [número de linhas] [nome do arquivo]
