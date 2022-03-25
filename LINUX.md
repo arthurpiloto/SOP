@@ -24,6 +24,7 @@ Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou 
 * O comando ` dd ` é um utilitário para copiar arquivos ou partições inteiras no nível de bits.
 * O comando ` mv ` é usado para mover um arquivo de um local no sistema de arquivos para outro.
 * O comando ` rm ` é usado para excluir arquivos e diretórios.
+* O comando ` grep ` é um filtro de texto que irá procurar linhas de entrada e retorno que contenham uma correspondência para um determinado padrão.
 
 ## Argumentos
 Um argumento pode ser usado para especificar algo para o comando agir. O comando ` ls ` pode ser dado o nome de um diretório como um argumento, e ele irá listar o conteúdo desse diretório.
@@ -200,3 +201,36 @@ O comando ` rm ` é usado para excluir arquivos e diretórios. É importante ter
 Sem opções, o comando ` rm ` é normalmente usado para remover arquivos regulares. O comando ` rm ` ignorará os diretórios que é solicitado a remover; para excluir um diretório, use uma opção recursiva, seja as opções ` -r ` ou ` -R `. Basta ter cuidado, uma vez que estas opções são “recursivas”, isto irá eliminar todos os arquivos e todos os subdiretórios.
 
 As permissões podem ter um impacto nos comandos de gerenciamento de arquivos, como o comando ` rm `. Para excluir um arquivo dentro de um diretório, um usuário deve ter permissão de gravação e execução em um diretório. Normalmente, os usuários regulares só têm esse tipo de permissão em seu diretório (home) pessoal e seus subdiretórios.
+
+## Filtragem de Entrada
+O comando ` grep ` é um filtro de texto que irá procurar linhas de entrada e retorno que contenham uma correspondência para um determinado padrão.
+
+    grep [opções] padrão [arquivo]
+
+O comando ` grep ` pode ser usado para filtrar informações sobre um usuário específico, apenas use o nome de usuário como argumento de padrão e o arquivo como argumento de arquivo. O comando ` grep ` é capaz de interpretar padrões de pesquisa complexos.
+
+### Expressões Regulares
+As expressões regulares têm duas formas comuns: básica e estendida. A maioria dos comandos que usam expressões regulares pode interpretar expressões regulares básicas. No entanto, expressões regulares estendidas não estão disponíveis para todos os comandos e uma opção de comando é normalmente necessária para que eles funcionem corretamente.
+
+A tabela a seguir resume os caracteres básicos de expressão regular:
+
+<img alt="Tabela de caracteres básicos de expressão regular" src="./img-notes/tabel-regular">
+
+A tabela a seguir resume as expressões regulares estendidas, que devem ser usadas com o comando ` egrep ` ou a opção ` -E ` com o comando ` grep `:
+
+<img alt="Tabela de expressões regulares estendidas" src="./img-notes/tabel-regularEstend">
+
+### Padrões Básicos
+Expressões regulares são padrões que apenas certos comandos são capazes de interpretar. Expressões regulares podem ser expandidas para corresponder a determinadas sequências de caracteres no texto. Os exemplos exibidos nesta página farão uso de expressões regulares para demonstrar seu poder quando usado com o comando ` grep `.
+
+* Caracteres Ancora
+
+Caracteres âncora são uma das formas como expressões regulares podem ser usadas para restringir os resultados da pesquisa.
+
+Para evitar que o shell os interprete errôneamente como caracteres especiais, esses padrões devem ser protegidos por aspas fortes, o que significa simplesmente colocá-los entre aspas simples. 
+
+O primeiro caractere âncora ^ é usado para garantir que um padrão apareça no início da linha. Observe que ^ deve ser o primeiro caractere no padrão para ser efetivo.
+
+O segundo caractere âncora $ pode ser usado para garantir que um padrão apareça no final da linha, reduzindo assim efetivamente os resultados da pesquisa. Para encontrar as linhas que terminam com um "r" em um arquivo qualquer, use o padrão ` r$ `.
+
+Novamente, a posição deste caractere é importante, o $ deve ser o último caractere no padrão para ser eficaz como uma âncora.
