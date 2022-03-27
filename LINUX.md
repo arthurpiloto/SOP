@@ -214,11 +214,11 @@ As expressões regulares têm duas formas comuns: básica e estendida. A maioria
 
 A tabela a seguir resume os caracteres básicos de expressão regular:
 
-<img alt="Tabela de caracteres básicos de expressão regular" src="./img-notes/tabel-regular">
+<img alt="Tabela de caracteres básicos de expressão regular" src="./img-notes/tabel-regular.png">
 
 A tabela a seguir resume as expressões regulares estendidas, que devem ser usadas com o comando ` egrep ` ou a opção ` -E ` com o comando ` grep `:
 
-<img alt="Tabela de expressões regulares estendidas" src="./img-notes/tabel-regularEstend">
+<img alt="Tabela de expressões regulares estendidas" src="./img-notes/tabel-regularEstend.png">
 
 ### Padrões Básicos
 Expressões regulares são padrões que apenas certos comandos são capazes de interpretar. Expressões regulares podem ser expandidas para corresponder a determinadas sequências de caracteres no texto. Os exemplos exibidos nesta página farão uso de expressões regulares para demonstrar seu poder quando usado com o comando ` grep `.
@@ -234,3 +234,8 @@ O primeiro caractere âncora ^ é usado para garantir que um padrão apareça no
 O segundo caractere âncora $ pode ser usado para garantir que um padrão apareça no final da linha, reduzindo assim efetivamente os resultados da pesquisa. Para encontrar as linhas que terminam com um "r" em um arquivo qualquer, use o padrão ` r$ `.
 
 Novamente, a posição deste caractere é importante, o $ deve ser o último caractere no padrão para ser eficaz como uma âncora.
+
+* Caractere ` . `
+
+Uma das expressões mais úteis é o caractere de ponto ` . `. Ele irá corresponder a qualquer caractere, exceto para o novo caractere de linha. O mesmo conceito pode ser repetido usando outras combinações. Este caractere pode ser usado qualquer número de vezes.
+
