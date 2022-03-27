@@ -25,6 +25,9 @@ Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou 
 * O comando ` mv ` é usado para mover um arquivo de um local no sistema de arquivos para outro.
 * O comando ` rm ` é usado para excluir arquivos e diretórios.
 * O comando ` grep ` é um filtro de texto que irá procurar linhas de entrada e retorno que contenham uma correspondência para um determinado padrão.
+* O comando ` shutdown ` faz com que o sistema seja desligado de forma segura.
+* O comando ` ifconfig ` significa “configuração de interface” e é usado para exibir informações sobre a configuração de rede.
+* O comando ` ping ` é usado para verificar a conectividade entre dois computadores.
 
 ## Argumentos
 Um argumento pode ser usado para especificar algo para o comando agir. O comando ` ls ` pode ser dado o nome de um diretório como um argumento, e ele irá listar o conteúdo desse diretório.
@@ -203,11 +206,11 @@ Sem opções, o comando ` rm ` é normalmente usado para remover arquivos regula
 As permissões podem ter um impacto nos comandos de gerenciamento de arquivos, como o comando ` rm `. Para excluir um arquivo dentro de um diretório, um usuário deve ter permissão de gravação e execução em um diretório. Normalmente, os usuários regulares só têm esse tipo de permissão em seu diretório (home) pessoal e seus subdiretórios.
 
 ## Filtragem de Entrada
-O comando ` grep ` é um filtro de texto que irá procurar linhas de entrada e retorno que contenham uma correspondência para um determinado padrão.
+O comando ` ` grep ` ` é um filtro de texto que irá procurar linhas de entrada e retorno que contenham uma correspondência para um determinado padrão.
 
-    grep [opções] padrão [arquivo]
+    ` grep ` [opções] padrão [arquivo]
 
-O comando ` grep ` pode ser usado para filtrar informações sobre um usuário específico, apenas use o nome de usuário como argumento de padrão e o arquivo como argumento de arquivo. O comando ` grep ` é capaz de interpretar padrões de pesquisa complexos.
+O comando ` ` grep ` ` pode ser usado para filtrar informações sobre um usuário específico, apenas use o nome de usuário como argumento de padrão e o arquivo como argumento de arquivo. O comando ` ` grep ` ` é capaz de interpretar padrões de pesquisa complexos.
 
 ### Expressões Regulares
 As expressões regulares têm duas formas comuns: básica e estendida. A maioria dos comandos que usam expressões regulares pode interpretar expressões regulares básicas. No entanto, expressões regulares estendidas não estão disponíveis para todos os comandos e uma opção de comando é normalmente necessária para que eles funcionem corretamente.
@@ -216,12 +219,12 @@ A tabela a seguir resume os caracteres básicos de expressão regular:
 
 <img alt="Tabela de caracteres básicos de expressão regular" src="./img-notes/tabel-regular.png">
 
-A tabela a seguir resume as expressões regulares estendidas, que devem ser usadas com o comando ` egrep ` ou a opção ` -E ` com o comando ` grep `:
+A tabela a seguir resume as expressões regulares estendidas, que devem ser usadas com o comando ` e` grep ` ` ou a opção ` -E ` com o comando ` ` grep ` `:
 
 <img alt="Tabela de expressões regulares estendidas" src="./img-notes/tabel-regularEstend.png">
 
 ### Padrões Básicos
-Expressões regulares são padrões que apenas certos comandos são capazes de interpretar. Expressões regulares podem ser expandidas para corresponder a determinadas sequências de caracteres no texto. Os exemplos exibidos nesta página farão uso de expressões regulares para demonstrar seu poder quando usado com o comando ` grep `.
+Expressões regulares são padrões que apenas certos comandos são capazes de interpretar. Expressões regulares podem ser expandidas para corresponder a determinadas sequências de caracteres no texto. Os exemplos exibidos nesta página farão uso de expressões regulares para demonstrar seu poder quando usado com o comando ` ` grep ` `.
 
 * Caracteres Ancora
 
@@ -239,3 +242,55 @@ Novamente, a posição deste caractere é importante, o $ deve ser o último car
 
 Uma das expressões mais úteis é o caractere de ponto ` . `. Ele irá corresponder a qualquer caractere, exceto para o novo caractere de linha. O mesmo conceito pode ser repetido usando outras combinações. Este caractere pode ser usado qualquer número de vezes.
 
+* Caractere ` [] `
+
+Os colchetes ` [] ` correspondem a um único caractere da lista ou intervalo de caracteres possíveis contidos entre parênteses.
+
+Para encontrar todas as linhas em um arquivo qualquer que têm um número neles, use o padrão ` [0123456789] ` ou ` [0-9] `.
+
+Por outro lado, para encontrar todas as linhas que contêm caracteres não numéricos, insira um ^ como o primeiro caractere dentro dos colchetes. Este caractere nega os caracteres listados.
+
+Quando outros caracteres de expressão regular são colocados dentro de colchetes, eles são tratados como caracteres literais. Por exemplo, o ` . ` normalmente corresponde a qualquer caractere, mas colocado dentro dos colchetes, então ele irá apenas corresponder a si mesmo.
+
+* Caractere ` * `
+
+O caractere de expressão regular ` * ` é usado para corresponder zero ou mais ocorrências de um caractere ou padrão que o precede.
+
+Também é possível combinar zero ou mais ocorrências de uma lista de caracteres utilizando os colchetes. O padrão ` [oe]* ` corresponderá a zero ou mais ocorrências do caractere "o" ou do caractere "e".
+
+Quando usado com apenas um outro caractere, ` * ` não é muito útil.
+
+Isso ocorre porque ` * ` pode corresponder a zero ocorrências de um padrão. Para tornar o ` * ` útil, é necessário criar um padrão que inclua mais do que apenas um caractere precedente a ` * `.
+
+### Entrada Padrão
+Se um nome de arquivo não for fornecido, o comando ` grep ` será lido a partir de entrada padrão, que normalmente vem do teclado com entrada fornecida pelo usuário que executa o comando. Isso fornece uma experiência interativa com ` grep ` onde o usuário digita na entrada e os filtros do ` grep ` à medida que vai.
+
+## Desligando
+O comando ` shutdown ` faz com que o sistema seja desligado de forma segura. Todos os usuários conectados são notificados de que o sistema está sendo desativado e, nos últimos cinco minutos que antecederam o desligamento, novos logins são evitados.
+
+    shutdown [opções] tempo [mensagem]
+
+O comando ` shutdown ` requer acesso administrativo. Ao contrário de outros comandos usados para desligar o sistema, o comando ` shutdown ` requer um argumento de tempo especificando quando o desligamento deve começar. Os formatos deste argumento de tempo podem ser a palavra now (agora), uma hora do dia no formato hh:mm ou o número de minutos para atrasar no formato +minutos.
+
+O relógio do nosso sistema pode ser definido para um fuso horário diferente daquele em que você está localizado. Para verificar a hora no terminal, use o comando ` date `.
+
+O comando ` shutdown ` também tem um argumento de mensagem opcional, indicando uma mensagem que aparecerá nos terminais de todos os usuários.
+
+## Configuração de Rede
+O comando ` ifconfig ` significa “configuração de interface” e é usado para exibir informações sobre a configuração de rede.
+
+    ifconfig [opções]
+
+O comando ` iwconfig ` é semelhante ao comando ` ifconfig `, mas é dedicado a interfaces de rede sem fio.
+
+O comando ` ifconfig ` também pode ser usado para modificar temporariamente as configurações de rede. Normalmente, essas alterações devem ser permanentes, portanto, usar o comando ` ifconfig ` para fazer essas alterações é bastante raro.
+
+O comando ` ping ` é usado para verificar a conectividade entre dois computadores. Ele faz isso enviando pacotes para outra máquina em uma rede. Se o remetente receber uma resposta, deverá ser possível conectar-se a essa máquina.
+
+As informações são enviadas usando 'pacotes'; a unidade encapsulada de dados enviados através de uma rede. Para que os pacotes encontrem o outro computador, eles precisarão de um endereço. O comando ` ping ` usa endereços IP para identificar um computador na rede ao qual ele deseja se conectar.
+
+Por padrão, o comando ` ping ` continuará enviando pacotes até que o comando break (CTL-C) seja inserido no console. Para limitar quantos pings são enviados, use a opção `- c ` seguida do número de pings a serem enviados.
+
+Se o comando ` ping ` falhar, você receberá uma mensagem informando: Destination Host Unreachable (Host de destino inacessível).
+
+O comando ` ping ` pode falhar mesmo que a máquina remota esteja se conectando. Isso ocorre porque alguns administradores configuram suas máquinas, ou mesmo redes inteiras, para não responder a solicitações de ` ping ` como medida de segurança. O comando ` ping ` também funciona com um nome de host ou nome de domínio, como yahoo.com. Usando este primeiro, se o comando ` ping ` for bem sucedido, haverá uma resolução apropriada do nome e o endereço IP também estará funcionando corretamente.
