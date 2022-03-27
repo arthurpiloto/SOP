@@ -28,6 +28,7 @@ Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou 
 * O comando ` shutdown ` faz com que o sistema seja desligado de forma segura.
 * O comando ` ifconfig ` significa “configuração de interface” e é usado para exibir informações sobre a configuração de rede.
 * O comando ` ping ` é usado para verificar a conectividade entre dois computadores.
+* O comando ` ps ` pode ser usado para listar processos.
 
 ## Argumentos
 Um argumento pode ser usado para especificar algo para o comando agir. O comando ` ls ` pode ser dado o nome de um diretório como um argumento, e ele irá listar o conteúdo desse diretório.
@@ -293,4 +294,25 @@ Por padrão, o comando ` ping ` continuará enviando pacotes até que o comando 
 
 Se o comando ` ping ` falhar, você receberá uma mensagem informando: Destination Host Unreachable (Host de destino inacessível).
 
+<img alt="Prompt quando o comando ping apresenta erro" src="./img-notes/ping-fail.png">
+
 O comando ` ping ` pode falhar mesmo que a máquina remota esteja se conectando. Isso ocorre porque alguns administradores configuram suas máquinas, ou mesmo redes inteiras, para não responder a solicitações de ` ping ` como medida de segurança. O comando ` ping ` também funciona com um nome de host ou nome de domínio, como yahoo.com. Usando este primeiro, se o comando ` ping ` for bem sucedido, haverá uma resolução apropriada do nome e o endereço IP também estará funcionando corretamente.
+
+## Exibindo Processos
+A execução de um comando resulta em algo chamado processo. No sistema operacional Linux, os processos são executados com os privilégios do usuário que executa o comando. Isso permite que os processos sejam limitados a determinados recursos com base na identidade do usuário.
+
+Embora existam exceções, geralmente o sistema operacional diferenciará os usuários com base no fato de serem eles, ou não, o administrador. Normalmente, os usuários regulares não podem controlar os processos de outro usuário. Os usuários que têm privilégios administrativos podem controlar qualquer processo do usuário, inclusive a interrupção de qualquer processo de usuário.
+
+O comando ` ps ` pode ser usado para listar processos.
+
+    ps [opções]
+
+O comando ` ps ` exibirá os processos que estão sendo executados no terminal atual por padrão. A saída inclui as seguintes colunas de informações:
+* PID: O identificador do processo, que é exclusivo para o processo. Esta informação é útil para controlar o processo pelo seu número de identificação.
+* TTY: O nome do terminal em que o processo está sendo executado. Esta informação é útil para distinguir entre diferentes processos que têm o mesmo nome.
+* TIME: A quantidade total de tempo do processador usado pelo processo. Normalmente, essas informações não são usadas por usuários comuns.
+* CMD: O comando que iniciou o processo.
+
+Em vez de visualizar apenas os processos em execução no terminal atual, os usuários podem querer visualizar todos os processos em execução no sistema. A opção ` -e ` exibirá todos os processos.
+
+Normalmente, a opção ` -f ` também é usada, pois fornece mais detalhes na saída do comando, incluindo opções e argumentos.
