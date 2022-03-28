@@ -37,6 +37,8 @@ Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou 
 * O comando ` apt-get upgrade ` autaliza todos os pacotes e dependências.
 * O comando ` apt-get remove ` remove um pacote.
 * O comando ` apt-get purge ` limpa um pacote completamente do sistema.
+* O comando ` passwd ` é usado para atualizar a senha de um usuário.
+* O comando ` echo ` é usado para imprimir a saída no terminal.
 
 ## Argumentos
 Um argumento pode ser usado para especificar algo para o comando agir. O comando ` ls ` pode ser dado o nome de um diretório como um argumento, e ele irá listar o conteúdo desse diretório.
@@ -363,3 +365,39 @@ O comando ` apt-get ` é capaz de remover ou limpar um pacote. A diferença entr
 
     apt-get remove [pacote]
     apt-get purge [pacote]
+
+## Atualizando Senhas de Usuário
+O comando ` passwd ` é usado para atualizar a senha de um usuário. Os usuários só podem alterar suas próprias senhas, enquanto o usuário root pode atualizar a senha para qualquer usuário.
+
+    passwd [opções] [utilizador]
+
+Por razões de segurança, nenhuma saída é exibida enquanto o comando está sendo executado. Se o usuário quiser exibir informações de status sobre sua senha, ele pode usar a opção ` -S `. 
+
+<img alt="Saída com a opção -S" src="./img-notes/saida-opcaoS.png">
+
+Os campos de saída são explicados abaixo:
+
+<img alt="Tabela com saídas sobre senhas de usuário" src="./img-notes/tabel-senhas.png">
+
+## Redirecionamento
+Adicionar conteúdo a arquivos no Linux pode ser feito de várias maneiras. Linux tem alguns editores de texto que podem ser usados para adicionar conteúdo a um arquivo. No entanto, esse método requer alguma familiaridade com os comandos do editor de texto do Linux.
+
+Há uma maneira no Linux de adicionar rapidamente conteúdo a um arquivo usando um recurso de linha de comando chamado de redirecionamento de entrada/saída (I/O). O redirecionamento de I/O permite que as informações na linha de comando sejam enviadas para arquivos, dispositivos e outros comandos. A entrada ou saída de um comando é redirecionada de seu destino padrão para um local diferente. O redirecionamento de I/O é como uma série de trilhos de trem, onde um switch (interruptor) pode ser habilitado para direcionar a saída de um comando em uma faixa diferente para que ele vá para outro lugar no shell.
+
+Quando se trata de entrada de comando e saída existem três caminhos, ou 'trilhas'. Esses caminhos são chamados de descritores de arquivo. O primeiro descritor de arquivo é entrada padrão (standard input), abreviado como STDIN. A entrada padrão é a informação que o comando recebe e processa quando é executado, essencialmente o que um usuário digita no teclado. O segundo descritor de arquivo é a saída padrão (standard output), abreviado como STDOUT. Saída padrão é a informação que o comando exibe, a saída do comando. O último descritor de arquivo é erro padrão (standard error), abreviado como STDERR. STDERR, são as mensagens de erro geradas por comandos que não são executados corretamente. Veja a seguir exemplos de como os descritores de arquivos aparecerão no terminal:
+
+<img alt="Exemplos de como os descritores de arquivos aparecerão no terminal" src="./img-notes/exemplos-descritores.png">
+
+Esta seção abordará um dos três descritores de arquivos, STDOUT, e como redirecionar STDOUT de onde você normalmente o vê, no terminal, para um arquivo no sistema de arquivos. Para usar o redirecionamento, basta usar um símbolo maior do que > junto com um nome de arquivo.
+
+    [comando] > [arquivo]
+
+Você pode usar o comando ` cat ` para redirecionar o STDOUT. Por exemplo:
+
+    cat food.txt > newfile1.txt
+
+Isso é útil se você precisar copiar conteúdo de um arquivo importante para outro arquivo para editar o conteúdo sem modificar o arquivo original. No entanto, e se você quiser adicionar um comentário ou nota a um arquivo? Para fazer isso, você pode usar o comando ` echo `. O comando ` echo ` é usado para imprimir a saída no terminal.
+
+Imprimir comentários na tela é um recurso divertido, mas o comando echo pode ser mais útil usando o redirecionamento. Usando o comando ` echo `, o conteúdo pode ser adicionado ao arquivo que você deseja.
+
+O comando ` echo ` substitui o conteúdo original do arquivo. Isso ocorre porque o único caractere ">" substituirá qualquer conteúdo em um arquivo existente. Para anexar em vez de sobrescrever/substituir conteúdo a um arquivo, use um símbolo duplo maior do que ">>".
