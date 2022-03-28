@@ -29,6 +29,14 @@ Em outras palavras, você digita um comando, seguido de quaisquer opções e/ou 
 * O comando ` ifconfig ` significa “configuração de interface” e é usado para exibir informações sobre a configuração de rede.
 * O comando ` ping ` é usado para verificar a conectividade entre dois computadores.
 * O comando ` ps ` pode ser usado para listar processos.
+* O comando ` dpkg ` é usado para gerenciar pacotes do sistema.
+* O comando ` apt-get update ` mostra uma lista de pacotes disponíveis que estão atualizados.
+* O comando ` apt-cache search ` procura palavras chaves dentro dos pacotes.
+* O comando ` apt-get install ` é usado para instalar um pacote.
+* O comando ` apt-get update ` atualiza o cache de todos os pacotes.
+* O comando ` apt-get upgrade ` autaliza todos os pacotes e dependências.
+* O comando ` apt-get remove ` remove um pacote.
+* O comando ` apt-get purge ` limpa um pacote completamente do sistema.
 
 ## Argumentos
 Um argumento pode ser usado para especificar algo para o comando agir. O comando ` ls ` pode ser dado o nome de um diretório como um argumento, e ele irá listar o conteúdo desse diretório.
@@ -316,3 +324,42 @@ O comando ` ps ` exibirá os processos que estão sendo executados no terminal a
 Em vez de visualizar apenas os processos em execução no terminal atual, os usuários podem querer visualizar todos os processos em execução no sistema. A opção ` -e ` exibirá todos os processos.
 
 Normalmente, a opção ` -f ` também é usada, pois fornece mais detalhes na saída do comando, incluindo opções e argumentos.
+
+## Gerenciamento de Pacotes
+O gerenciamento de pacotes é um sistema pelo qual o software pode ser instalado, atualizado, consultado ou removido de um sistema de arquivos. No Linux, existem muitos sistemas diferentes de gerenciamento de pacotes de software diferentes, mas os dois mais populares são os do Debian e da Red Hat.
+
+No nível mais baixo do sistema de gerenciamento de pacotes Debian está o comando ` dpkg `. Este comando pode ser complicado para usuários iniciantes do Linux, então a Advanced Package Tool, ` apt-get `, um programa front-end para a ferramenta ` dpkg `, torna o gerenciamento de pacotes ainda mais fácil.
+
+Muitos dos comandos de gerenciamento de pacotes exigem acesso administrativo.
+* Os comandos de pacotes, geralmente, podem levar alguns minutos para serem executados.
+
+### Instalando Pacotes
+Os arquivos de pacote são normalmente instalados baixando-os diretamente de repositórios localizados em servidores de Internet. Os repositórios Debian contêm mais de 65.000 pacotes diferentes de software. Antes de instalar um pacote, é uma boa prática usar a atualização da lista de pacotes disponíveis usando o comando ` apt-get update `.
+
+    sudo apt-get update
+
+Para procurar palavras-chave dentro desses pacotes, você pode usar o comando ` apt-cache search `.
+
+    apt-cache search [palavra chave]
+
+A palavra-chave usada deve corresponder a parte do nome ou descrição do pacote que deve ser localizado. Várias palavras-chave podem ser usadas para esclarecer ainda mais a pesquisa.
+
+Depois de encontrar o pacote que deseja instalar, você pode instalá-lo com o comando ` apt-get install `.
+
+    sudo apt-get install [pacote]
+
+### Atualizando Pacotes
+O comando ` apt-get install ` pode atualizar um pacote, se esse pacote estiver instalado e uma versão mais recente estiver disponível. Se o pacote ainda não estiver no sistema, ele será instalado; se estiver no sistema, ele será atualizado.
+
+A atualização de todos os pacotes do sistema deve ser feita em duas etapas. Primeiro, atualize o cache de todos os pacotes disponíveis com o apt-get update. Em segundo lugar, execute o comando apt-get upgrade e todos os pacotes e dependências serão atualizados.
+
+    apt-get update 
+    apt-get upgrade
+
+### Removendo Pacotes
+Um administrador pode executar o comando ` apt-get remove ` para remover um pacote ou o comando ` apt-get purge ` para limpar um pacote completamente do sistema.
+
+O comando ` apt-get ` é capaz de remover ou limpar um pacote. A diferença entre os dois é que a limpeza apaga todos os arquivos de pacote, enquanto a remoção exclui todos os arquivos de configuração do pacote, exceto os arquivos de configuração.
+
+    apt-get remove [pacote]
+    apt-get purge [pacote]
