@@ -401,3 +401,49 @@ Isso é útil se você precisar copiar conteúdo de um arquivo importante para o
 Imprimir comentários na tela é um recurso divertido, mas o comando echo pode ser mais útil usando o redirecionamento. Usando o comando ` echo `, o conteúdo pode ser adicionado ao arquivo que você deseja.
 
 O comando ` echo ` substitui o conteúdo original do arquivo. Isso ocorre porque o único caractere ">" substituirá qualquer conteúdo em um arquivo existente. Para anexar em vez de sobrescrever/substituir conteúdo a um arquivo, use um símbolo duplo maior do que ">>".
+
+## Editor de Texto
+O principal editor de texto para Linux e UNIX é um programa chamado ` vi `. Embora existam inúmeros editores disponíveis para Linux que vão desde o pequeno editor ` nano ` até o enorme editor ` emacs `, existem várias vantagens para o editor ` vi `:
+
+* O editor ` vi ` está disponível em todas as distribuições Linux do mundo. Isto não é verdade para qualquer outro editor.
+
+* O editor ` vi ` pode ser executado tanto em uma CLI (interface de linha de comando) quanto em uma GUI (interface gráfica do usuário).
+
+* Embora novos recursos tenham sido adicionados ao editor ` vi `, as funções principais já existem há décadas. Isso significa que se alguém aprendeu o editor ` vi ` na década de 1970, eles poderiam usar uma versão moderna sem qualquer problema. Embora pareça trivial, pode não parecer tão trivial daqui a 20 anos.
+
+Na realidade, a maioria dos sistemas Linux não inclui o ` vi ` original, mas uma versão melhorada do mesmo conhecido como ` vim `, para ` vi ` melhorado. Este fato pode estar oculto pela maioria das distribuições Linux. Na maioria das vezes, o ` vim ` funciona como ` vi `, mas tem recursos adicionais. Para os tópicos que serão abordados neste curso, tanto ` vi ` como ` vim ` funcionarão.
+
+Para começar a usar ` vi `, basta digitar o comando seguido do nome do caminho para o arquivo para editar ou criar. Exemplo:
+
+<img alt="Exemplo de uso do vi" src=./img-notes/viEx.png>
+
+Existem três modos de usar o ` vi `: modo de comando, modo de inserção e modo ex.
+
+### Modo de Comando
+#### Movimento do Modo de Comando
+
+Inicialmente, o programa é iniciado no modo de comando. Modo de comando é usado para digitar comandos, como aqueles usados para se mover em torno de um documento, manipular texto e acessar os outros dois modos. Para retornar ao modo de comando a qualquer momento, pressione a tecla Esc.
+
+Uma vez que algum texto foi adicionado a um documento, para executar ações como mover o cursor, a tecla Esc precisa ser pressionada primeiro para retornar ao modo de comando. Isso parece muito trabalho, mas lembre-se que ` vi ` funciona em um ambiente terminal onde um mouse é inútil.
+
+Comandos de movimento em ` vi ` têm dois aspectos, um movimento e um prefixo numérico opcional, que indica quantas vezes repetir esse movimento. O formato geral é o seguinte:
+
+    [contagem] movimento
+
+A seguir temos uma tabela que resume as teclas de movimento disponíveis:
+
+<img alt="Tabela com as teclas de movimento" src="./img-notes/tabelMov.png">
+
+Esses movimentos podem ser prefixados com um número para indicar quantas vezes o movimento deve ser realizado. Por exemplo, ` 5h ` moverá o cursor cinco caracteres para a esquerda e ` 3w ` moverá o cursor três palavras para a direita.
+
+Para mover o cursor para um número de linha específico, digite esse número de linha seguido do caractere ` G `. Por exemplo, para chegar à quinta linha do arquivo tipo ` 5G `. ` 1G ` ou gg pode ser usado para ir para a primeira linha do arquivo, enquanto um ` G ` solitário irá levá-lo para a última linha. Para descobrir em que linha o cursor está atualmente, use CTRL-G.
+
+#### Ações do Modo de Comando
+A convenção padrão para edição de conteúdo com processadores de texto é usar copiar, cortar e colar. O programa vi não tem nenhum destes. Em vez disso, ` vi ` usa os três comandos a seguir:
+
+<img alt="Tabela com comandos de ações" src="./img-notes/,acoesModComand.png">
+
+Os comandos da explicação anterior são usados para especificar onde a ação deve ocorrer, sempre começando com a localização atual do cursor.
+
+    ação [contagem] movimento
+    [contagem] movimento ação
