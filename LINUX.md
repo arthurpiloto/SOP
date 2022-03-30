@@ -447,3 +447,32 @@ Os comandos da explicação anterior são usados para especificar onde a ação 
 
     ação [contagem] movimento
     [contagem] movimento ação
+
+##### Excluir
+Excluir remove o texto indicado da página e o guarda no buffer, sendo o buffer o equivalente à “área de transferência” usada no Windows ou Mac OSX. A tabela a seguir fornece alguns exemplos de uso comuns:
+
+<img alt="Tabela com ações com a função de excluir" src="./img-notes/tabelAcEx.png">
+
+##### Mudar
+Mudança é muito semelhante a excluir; o texto é removido e guardado no buffer, no entanto, o programa é alternado para o modo de inserção para permitir alterações imediatas no texto. A tabela a seguir fornece alguns exemplos de uso comuns:
+
+<img alt="Tabela com ações com a função de mudar" src="./img-notes/tabelAcMd.png">
+
+##### Arrancar (Yank)
+Yank coloca conteúdo no buffer sem excluí-lo. A tabela a seguir fornece alguns exemplos de uso comuns:
+
+<img alt="Tabela com ações com a função de arrancar" src="./img-notes/tabelAcArr.png">
+
+##### Colocar
+O colocar, posiciona o texto guardado no buffer antes ou depois da posição do cursor. Observe que estas são as duas únicas opções, o colocar não usa os movimentos como os comandos de ação anteriores.
+
+<img alt="Tabela com ações com a função de colocar" src="./img-notes/tabelAcCol.png">
+
+##### Pesquisando em vi
+Outra função padrão que os processadores de texto oferecem é o encontrar. Muitas vezes, as pessoas usam CTRL-F ou observam o menu de edição. O programa ` vi ` usa a pesquisa. O pesquisar é mais eficiente do que o encontrar porque suporta padrões de texto literal e expressões regulares.
+
+Para pesquisar a partir da posição atual do cursor, use ` / ` para iniciar a pesquisa, digite um termo de pesquisa e pressione a tecla Enter para iniciar a pesquisa. O cursor se moverá para a primeira correspondência que for encontrada.
+
+Para prosseguir para a próxima correspondência usando o mesmo padrão, pressione a tecla ` n `. Para voltar a uma partida anterior, pressione a tecla ` N `. Se o fim ou o início do documento for atingido, a pesquisa se estenderá automaticamente para o outro lado do documento.
+
+Para começar a pesquisar para trás a partir da posição do cursor, comece escrevendo ` ? `, depois digite o padrão para procurar correspondências e pressione a tecla Enter.
