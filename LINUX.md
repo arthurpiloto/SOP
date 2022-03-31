@@ -417,6 +417,15 @@ Para começar a usar ` vi `, basta digitar o comando seguido do nome do caminho 
 
 <img alt="Exemplo de uso do vi" src=./img-notes/viEx.png>
 
+### Pesquisando em vi
+Outra função padrão que os processadores de texto oferecem é o encontrar. Muitas vezes, as pessoas usam CTRL-F ou observam o menu de edição. O programa ` vi ` usa a pesquisa. O pesquisar é mais eficiente do que o encontrar porque suporta padrões de texto literal e expressões regulares.
+
+Para pesquisar a partir da posição atual do cursor, use ` / ` para iniciar a pesquisa, digite um termo de pesquisa e pressione a tecla Enter para iniciar a pesquisa. O cursor se moverá para a primeira correspondência que for encontrada.
+
+Para prosseguir para a próxima correspondência usando o mesmo padrão, pressione a tecla ` n `. Para voltar a uma partida anterior, pressione a tecla ` N `. Se o fim ou o início do documento for atingido, a pesquisa se estenderá automaticamente para o outro lado do documento.
+
+Para começar a pesquisar para trás a partir da posição do cursor, comece escrevendo ` ? `, depois digite o padrão para procurar correspondências e pressione a tecla Enter.
+
 Existem três modos de usar o ` vi `: modo de comando, modo de inserção e modo ex.
 
 ### Modo de Comando
@@ -468,11 +477,20 @@ O colocar, posiciona o texto guardado no buffer antes ou depois da posição do 
 
 <img alt="Tabela com ações com a função de colocar" src="./img-notes/tabelAcCol.png">
 
-##### Pesquisando em vi
-Outra função padrão que os processadores de texto oferecem é o encontrar. Muitas vezes, as pessoas usam CTRL-F ou observam o menu de edição. O programa ` vi ` usa a pesquisa. O pesquisar é mais eficiente do que o encontrar porque suporta padrões de texto literal e expressões regulares.
+### Modo de Inserção
+O modo de inserção é usado para adicionar texto ao documento. Há algumas maneiras de entrar no modo de inserção a partir do modo de comando, cada uma diferenciada por onde a inserção de texto começará. A tabela a seguir abrange o mais comum:
 
-Para pesquisar a partir da posição atual do cursor, use ` / ` para iniciar a pesquisa, digite um termo de pesquisa e pressione a tecla Enter para iniciar a pesquisa. O cursor se moverá para a primeira correspondência que for encontrada.
+<img alt="Tabela com maneiras de entrar no modo de inserção" src=";/img-notes/tabelModInsert.png">
 
-Para prosseguir para a próxima correspondência usando o mesmo padrão, pressione a tecla ` n `. Para voltar a uma partida anterior, pressione a tecla ` N `. Se o fim ou o início do documento for atingido, a pesquisa se estenderá automaticamente para o outro lado do documento.
+### Ex Mode
+Originalmente, o editor ` vi ` era chamado de editorex. O nome ` vi ` era a abreviação do comando visual no editor ` ex ` que mudou o editor para o modo “visual”.
 
-Para começar a pesquisar para trás a partir da posição do cursor, comece escrevendo ` ? `, depois digite o padrão para procurar correspondências e pressione a tecla Enter.
+No modo normal original, o editor ` ex ` só permitia aos usuários ver e modificar uma linha de cada vez. No modo visual, os usuários podiam ver o máximo possível do documento que caberia na tela. Como a maioria dos usuários preferia o modo visual ao modo de edição de linha, o arquivo ` ex ` programa foi vinculado a um arquivo ` vi `, para que os usuários pudessem iniciar ` ex ` diretamente no modo visual quando executassem o link ` vi `.
+
+Eventualmente, o arquivo de programa real foi renomeado ` vi ` e o editor ` ex ` tornou-se um link que apontava o editor ` vi `.
+
+Quando o modo ` ex ` do editor ` vi ` está sendo usado, é possível visualizar ou alterar configurações, bem como executar comandos relacionados a arquivos, como abrir, guardar ou interromper alterações em um arquivo. Para chegar ao modo ` ex `, digite um caractere ` : ` no modo de comando. A tabela a seguir lista algumas ações comuns executadas no modo ex:
+
+<img alt="Tabela com ações comuns executadas no modo ex" src="./img-notes/tabelModEx.png">
+
+Uma análise rápida da tabela acima revela que, se um ponto de exclamação, ` ! `, é adicionado a um comando, ele então tenta forçar a operação. Por exemplo, imagine que você faz alterações em um arquivo no editor ` vi ` e, em seguida, tente sair com ` :q `, apenas para descobrir que o comando falha. O editor ` vi ` não quer sair sem salvar as alterações feitas em um arquivo, mas você pode forçá-lo a sair com o comando ex ` :q! `.
