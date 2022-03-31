@@ -480,7 +480,7 @@ O colocar, posiciona o texto guardado no buffer antes ou depois da posição do 
 ### Modo de Inserção
 O modo de inserção é usado para adicionar texto ao documento. Há algumas maneiras de entrar no modo de inserção a partir do modo de comando, cada uma diferenciada por onde a inserção de texto começará. A tabela a seguir abrange o mais comum:
 
-<img alt="Tabela com maneiras de entrar no modo de inserção" src=";/img-notes/tabelModInsert.png">
+<img alt="Tabela com maneiras de entrar no modo de inserção" src="./img-notes/tabelModInsert.png">
 
 ### Ex Mode
 Originalmente, o editor ` vi ` era chamado de editorex. O nome ` vi ` era a abreviação do comando visual no editor ` ex ` que mudou o editor para o modo “visual”.
