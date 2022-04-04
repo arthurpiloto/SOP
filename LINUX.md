@@ -217,11 +217,11 @@ Sem opções, o comando ` rm ` é normalmente usado para remover arquivos regula
 As permissões podem ter um impacto nos comandos de gerenciamento de arquivos, como o comando ` rm `. Para excluir um arquivo dentro de um diretório, um usuário deve ter permissão de gravação e execução em um diretório. Normalmente, os usuários regulares só têm esse tipo de permissão em seu diretório (home) pessoal e seus subdiretórios.
 
 ## Filtragem de Entrada
-O comando ` ` grep ` ` é um filtro de texto que irá procurar linhas de entrada e retorno que contenham uma correspondência para um determinado padrão.
+O comando ` grep ` é um filtro de texto que irá procurar linhas de entrada e retorno que contenham uma correspondência para um determinado padrão.
 
-    ` grep ` [opções] padrão [arquivo]
+    grep [opções] padrão [arquivo]
 
-O comando ` ` grep ` ` pode ser usado para filtrar informações sobre um usuário específico, apenas use o nome de usuário como argumento de padrão e o arquivo como argumento de arquivo. O comando ` ` grep ` ` é capaz de interpretar padrões de pesquisa complexos.
+O comando ` grep ` pode ser usado para filtrar informações sobre um usuário específico, apenas use o nome de usuário como argumento de padrão e o arquivo como argumento de arquivo. O comando ` grep ` é capaz de interpretar padrões de pesquisa complexos.
 
 ### Expressões Regulares
 As expressões regulares têm duas formas comuns: básica e estendida. A maioria dos comandos que usam expressões regulares pode interpretar expressões regulares básicas. No entanto, expressões regulares estendidas não estão disponíveis para todos os comandos e uma opção de comando é normalmente necessária para que eles funcionem corretamente.
@@ -230,12 +230,12 @@ A tabela a seguir resume os caracteres básicos de expressão regular:
 
 <img alt="Tabela de caracteres básicos de expressão regular" src="./img-notes/tabel-regular.png">
 
-A tabela a seguir resume as expressões regulares estendidas, que devem ser usadas com o comando ` e` grep ` ` ou a opção ` -E ` com o comando ` ` grep ` `:
+A tabela a seguir resume as expressões regulares estendidas, que devem ser usadas com o comando ` egrep ` ou a opção ` -E ` com o comando ` grep `:
 
 <img alt="Tabela de expressões regulares estendidas" src="./img-notes/tabel-regularEstend.png">
 
 ### Padrões Básicos
-Expressões regulares são padrões que apenas certos comandos são capazes de interpretar. Expressões regulares podem ser expandidas para corresponder a determinadas sequências de caracteres no texto. Os exemplos exibidos nesta página farão uso de expressões regulares para demonstrar seu poder quando usado com o comando ` ` grep ` `.
+Expressões regulares são padrões que apenas certos comandos são capazes de interpretar. Expressões regulares podem ser expandidas para corresponder a determinadas sequências de caracteres no texto. Os exemplos exibidos nesta página farão uso de expressões regulares para demonstrar seu poder quando usado com o comando ` grep `.
 
 * Caracteres Ancora
 
@@ -300,7 +300,7 @@ O comando ` ping ` é usado para verificar a conectividade entre dois computador
 
 As informações são enviadas usando 'pacotes'; a unidade encapsulada de dados enviados através de uma rede. Para que os pacotes encontrem o outro computador, eles precisarão de um endereço. O comando ` ping ` usa endereços IP para identificar um computador na rede ao qual ele deseja se conectar.
 
-Por padrão, o comando ` ping ` continuará enviando pacotes até que o comando break (CTL-C) seja inserido no console. Para limitar quantos pings são enviados, use a opção `- c ` seguida do número de pings a serem enviados.
+Por padrão, o comando ` ping ` continuará enviando pacotes até que o comando break (CTL-C) seja inserido no console. Para limitar quantos pings são enviados, use a opção ` -c ` seguida do número de pings a serem enviados.
 
 Se o comando ` ping ` falhar, você receberá uma mensagem informando: Destination Host Unreachable (Host de destino inacessível).
 
@@ -450,7 +450,7 @@ Para mover o cursor para um número de linha específico, digite esse número de
 #### Ações do Modo de Comando
 A convenção padrão para edição de conteúdo com processadores de texto é usar copiar, cortar e colar. O programa vi não tem nenhum destes. Em vez disso, ` vi ` usa os três comandos a seguir:
 
-<img alt="Tabela com comandos de ações" src="./img-notes/,acoesModComand.png">
+<img alt="Tabela com comandos de ações" src="./img-notes/acoesModComand.png">
 
 Os comandos da explicação anterior são usados para especificar onde a ação deve ocorrer, sempre começando com a localização atual do cursor.
 
