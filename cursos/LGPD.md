@@ -55,7 +55,7 @@ Assim que os dados são cruzados e analisados com inteligência de mercado, eles
 
 Para você entender como os dados são transformados em informações, faremos uma analogia com a produção de uma cadeira feita de madeira. A madeira é considerada a matéria-prima que ganha valor agregado após a produção do móvel.
 
-![Esquema de analogia que apresenta a imagem de uma pilha de madeira, uma indústria de produção e uma cadeira de madeira, todos em sequência respectivamente.](./img-notes/lgpd1.png)
+![Esquema de analogia que apresenta a imagem de uma pilha de madeira, uma indústria de produção e uma cadeira de madeira, todos em sequência respectivamente.](../img-notes/lgpd1.png)
 
 As organizações, tanto públicas quanto privadas, executam um processo similar quando coletam os dados que fornecemos direta ou indiretamente para elas, com ou sem o nosso consentimento.
 
@@ -145,5 +145,3 @@ Nesse sentido, a LGPD estabelece diversos direitos, visando nos proteger em rela
 
 ## Direitos dos Indivíduos
 Para que possamos exercer o poder de titularidade das nossas próprias informações, devemos reconhecer os seguintes direitos:
-
-!
